@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Unsupervised Learning — Full Interactive Model</title>
+<meta name="description" content="Complete interactive study model covering all 6 units of Unsupervised Learning with visualizations, calculators, and a PCA vs t-SNE dashboard."/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <h2>?? Unsupervised ML</h2>
+    <p>Full Interactive Study Model</p>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">Overview</div>
+    <a class="nav-item active" data-page="home"><span class="nav-icon">??</span>Home</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">Units</div>
+    <a class="nav-item" data-page="unit1"><span class="nav-icon">??</span>Unit I — Foundations</a>
+    <a class="nav-item" data-page="unit2"><span class="nav-icon">??</span>Unit II — Partition Clustering</a>
+    <a class="nav-item" data-page="unit3"><span class="nav-icon">??</span>Unit III — Hierarchical & DBSCAN</a>
+    <a class="nav-item" data-page="unit4"><span class="nav-icon">??</span>Unit IV — Dim. Reduction</a>
+    <a class="nav-item" data-page="unit5"><span class="nav-icon">??</span>Unit V — Association & Anomaly</a>
+    <a class="nav-item" data-page="unit6"><span class="nav-icon">??</span>Unit VI — Evaluation</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">Project</div>
+    <a class="nav-item" data-page="project"><span class="nav-icon">??</span>PCA vs t-SNE Dashboard <span class="nav-badge">Live</span></a>
+  </div>
+</nav>
+
+<main class="main-content">
+
+<!-- HOME PAGE -->
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="hero-tag">?? Study Model · 6 Units · Interactive</div>
+    <h1>Foundations of Unsupervised Learning</h1>
+    <p>A complete end-to-end interactive model covering clustering, dimensionality reduction, association rules, anomaly detection, and evaluation — with live visualizations and calculators.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="value">6</div><div class="label">Units</div></div>
+      <div class="hero-stat"><div class="value">10+</div><div class="label">Algorithms</div></div>
+      <div class="hero-stat"><div class="value">8</div><div class="label">Live Demos</div></div>
+      <div class="hero-stat"><div class="value">1</div><div class="label">Project</div></div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:20px">
+    <div class="card" style="cursor:pointer" onclick="showPage('unit1')">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>Unit I</h3><p>Foundations</p></div></div>
+      <p style="font-size:13px;color:var(--text-secondary)">Supervised vs Unsupervised vs Semi-supervised, distance metrics, real-world use cases</p>
+      <div style="margin-top:12px"><span class="badge badge-purple">Distance Metrics</span> <span class="badge badge-cyan">Use Cases</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="showPage('unit2')">
+      <div class="card-header"><div class="card-icon" style="background:rgba(139,92,246,0.15)">??</div><div><h3>Unit II</h3><p>Partition Clustering</p></div></div>
+      <p style="font-size:13px;color:var(--text-secondary)">k-Means, k-Medoids, Mini-Batch, cluster validation — WCSS, Silhouette, Davies-Bouldin</p>
+      <div style="margin-top:12px"><span class="badge badge-purple">k-Means Live</span> <span class="badge badge-amber">Elbow Method</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="showPage('unit3')">
+      <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>Unit III</h3><p>Hierarchical &amp; DBSCAN</p></div></div>
+      <p style="font-size:13px;color:var(--text-secondary)">Agglomerative, divisive, linkage methods, dendrogram, DBSCAN e-neighborhoods</p>
+      <div style="margin-top:12px"><span class="badge badge-cyan">DBSCAN Live</span> <span class="badge badge-emerald">Dendrogram</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="showPage('unit4')">
+      <div class="card-header"><div class="card-icon" style="background:rgba(16,185,129,0.15)">??</div><div><h3>Unit IV</h3><p>Dimensionality Reduction</p></div></div>
+      <p style="font-size:13px;color:var(--text-secondary)">PCA, t-SNE, UMAP, Autoencoders — linear vs non-linear approaches</p>
+      <div style="margin-top:12px"><span class="badge badge-emerald">PCA Intuition</span> <span class="badge badge-cyan">t-SNE/UMAP</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="showPage('unit5')">
+      <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">??</div><div><h3>Unit V</h3><p>Association &amp; Anomaly</p></div></div>
+      <p style="font-size:13px;color:var(--text-secondary)">Apriori, FP-Growth, market basket analysis, Isolation Forest, LOF</p>
+      <div style="margin-top:12px"><span class="badge badge-amber">Rule Calculator</span> <span class="badge badge-rose">Anomaly Detection</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="showPage('unit6')">
+      <div class="card-header"><div class="card-icon" style="background:rgba(244,63,94,0.15)">??</div><div><h3>Unit VI</h3><p>Evaluation</p></div></div>
+      <p style="font-size:13px;color:var(--text-secondary)">Internal/external metrics, stability evaluation, ethics, real-world case studies</p>
+      <div style="margin-top:12px"><span class="badge badge-rose">Metrics</span> <span class="badge badge-emerald">Case Study</span></div>
+    </div>
+  </div>
+
+  <div class="card" style="cursor:pointer;background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(6,182,212,0.08));border-color:rgba(99,102,241,0.3)" onclick="showPage('project')">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="font-size:48px">??</div>
+      <div>
+        <h3 style="font-size:18px;margin-bottom:6px">Project Component: PCA vs t-SNE Visualization Dashboard</h3>
+        <p style="font-size:14px;color:var(--text-secondary)">Live interactive comparison of PCA and t-SNE projections on MNIST digits and customer segmentation data. Includes silhouette analysis and cluster quality metrics.</p>
+        <div style="margin-top:10px"><span class="badge badge-purple">Live Visualization</span> <span class="badge badge-cyan">MNIST</span> <span class="badge badge-emerald">Customer Data</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT 1: FOUNDATIONS -->
+<section id="unit1" class="page unit-1">
+  <div class="hero">
+    <div class="hero-tag">Unit I · Foundations</div>
+    <h1>Foundations of Unsupervised Learning</h1>
+    <p>Understanding learning paradigms, problem formulation, real-world use cases, and distance/similarity metrics.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>Learning Paradigms</h3></div></div>
+      <table class="compare-table">
+        <tr><th>Aspect</th><th>Supervised</th><th>Unsupervised</th><th>Semi-Supervised</th></tr>
+        <tr><td>Labels</td><td>? Required</td><td>? None</td><td>? Partial</td></tr>
+        <tr><td>Goal</td><td>Predict output</td><td>Find structure</td><td>Both</td></tr>
+        <tr><td>Examples</td><td>Classification, Regression</td><td>Clustering, DR</td><td>Label propagation</td></tr>
+        <tr><td>Data cost</td><td>High (labeling)</td><td>Low</td><td>Medium</td></tr>
+        <tr><td>Evaluation</td><td>Accuracy, F1</td><td>Silhouette, DB</td><td>Mixed</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>Real-World Use Cases</h3></div></div>
+      <div class="concept-box"><h4>?? Market Segmentation</h4><p>Group customers by purchasing behavior, demographics, or engagement patterns to target campaigns effectively.</p></div>
+      <div class="concept-box"><h4>?? Anomaly &amp; Fraud Detection</h4><p>Identify unusual credit card transactions, network intrusions, or manufacturing defects without labeled fraud samples.</p></div>
+      <div class="concept-box"><h4>?? Biological Data</h4><p>Gene expression clustering, protein folding pattern discovery, social network community detection.</p></div>
+    </div>
+  </div>
+
+  <!-- Distance Calculator -->
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">??</div><div><h3>Distance &amp; Similarity Metrics — Live Calculator</h3></div></div>
+    <div class="grid-2">
+      <div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+          <div><label style="font-size:12px;color:var(--text-muted)">Point 1 X</label><br><input id="p1x" type="number" value="2" style="width:100%;padding:8px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px"></div>
+          <div><label style="font-size:12px;color:var(--text-muted)">Point 1 Y</label><br><input id="p1y" type="number" value="3" style="width:100%;padding:8px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px"></div>
+          <div><label style="font-size:12px;color:var(--text-muted)">Point 2 X</label><br><input id="p2x" type="number" value="5" style="width:100%;padding:8px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px"></div>
+          <div><label style="font-size:12px;color:var(--text-muted)">Point 2 Y</label><br><input id="p2y" type="number" value="7" style="width:100%;padding:8px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px"></div>
+        </div>
+        <button id="btn-calc-dist" class="btn btn-primary" style="width:100%">Calculate All Metrics</button>
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+          <div class="metric-card"><div class="metric-value" id="res-euclidean">5.000</div><div class="metric-label">Euclidean</div><div class="metric-desc">v(S(xi-yi)²) — straight-line distance</div></div>
+          <div class="metric-card"><div class="metric-value" id="res-manhattan">7.000</div><div class="metric-label">Manhattan</div><div class="metric-desc">S|xi-yi| — city-block distance</div></div>
+          <div class="metric-card"><div class="metric-value" id="res-cosine">0.997</div><div class="metric-label">Cosine Sim.</div><div class="metric-desc">A·B/(|A||B|) — angle similarity</div></div>
+        </div>
+        <div class="info-alert" style="margin-top:12px"><div class="info-icon">??</div><div><strong>When to use what:</strong> Euclidean for physical space; Manhattan for grid/sparse data; Cosine for text/high-dimensional vectors where magnitude is irrelevant.</div></div>
+      </div>
+      <div class="canvas-container"><canvas id="distCanvas" width="380" height="280"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>Euclidean Distance</h3></div></div>
+      <div class="formula-box">d = v[(x2-x1)² + (y2-y1)²]</div>
+      <p style="font-size:13px;color:var(--text-secondary)">Measures straight-line distance. Sensitive to scale — always standardize features before use.</p>
+      <div style="margin-top:10px"><span class="badge badge-emerald">Best for: Compact clusters</span></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">???</div><div><h3>Manhattan Distance</h3></div></div>
+      <div class="formula-box">d = S|x? - y?|</div>
+      <p style="font-size:13px;color:var(--text-secondary)">Sum of absolute differences. Robust to outliers, ideal for high-dimensional or sparse data.</p>
+      <div style="margin-top:10px"><span class="badge badge-amber">Best for: Sparse/grid data</span></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>Cosine Similarity</h3></div></div>
+      <div class="formula-box">cos ? = (A·B)/(|A|·|B|)</div>
+      <p style="font-size:13px;color:var(--text-secondary)">Measures angle between vectors — ignores magnitude. Standard for NLP, document clustering.</p>
+      <div style="margin-top:10px"><span class="badge badge-cyan">Best for: Text / NLP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT 2: PARTITION CLUSTERING -->
+<section id="unit2" class="page unit-2">
+  <div class="hero">
+    <div class="hero-tag">Unit II · Partition-Based Clustering</div>
+    <h1>k-Means, k-Medoids &amp; Cluster Validation</h1>
+    <p>Hard vs soft clustering, initialization strategies, convergence, and validation metrics including WCSS, Silhouette, and Davies-Bouldin.</p>
+  </div>
+
+  <!-- k-Means Interactive Demo -->
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-header"><div class="card-icon" style="background:rgba(139,92,246,0.15)">??</div><div><h3>k-Means — Live Interactive Demo</h3><p>Watch the algorithm converge in real time</p></div></div>
+    <div class="grid-2">
+      <div>
+        <div class="canvas-container"><canvas id="kmeans-canvas" width="400" height="300"></canvas></div>
+        <div class="controls">
+          <div class="slider-group"><label>k clusters:</label><input type="range" id="km-k" min="2" max="7" value="3" oninput="document.getElementById('km-k-val').textContent=this.value"><span id="km-k-val">3</span></div>
+          <select id="km-init"><option value="kmeans++">k-Means++</option><option value="random">Random</option></select>
+          <button class="btn btn-secondary" onclick="initKMeans()">?? Reset</button>
+          <button class="btn btn-primary" onclick="stepKMeans()">? Step</button>
+          <button class="btn btn-emerald" onclick="runKMeans()">? Run</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px">
+          <div class="metric-card"><div class="metric-value" id="wcss-val">—</div><div class="metric-label">WCSS (Inertia)</div></div>
+          <div class="metric-card"><div class="metric-value" id="step-val">0</div><div class="metric-label">Iteration</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="concept-box"><h4>Algorithm Steps</h4>
+          <ul class="step-list">
+            <li><span class="step-num">1</span>Initialize k centroids (Random or k-Means++)</li>
+            <li><span class="step-num">2</span>Assign each point to nearest centroid</li>
+            <li><span class="step-num">3</span>Recompute centroids as cluster means</li>
+            <li><span class="step-num">4</span>Repeat 2–3 until centroids stop moving</li>
+          </ul>
+        </div>
+        <div class="concept-box" style="margin-top:12px"><h4>Objective Function</h4>
+          <div class="formula-box">J = S? S??C? ?x - µ??²</div>
+          <p style="font-size:13px;color:var(--text-secondary)">Minimize total within-cluster sum of squared distances (WCSS). k-Means is guaranteed to converge but may find local minima.</p>
+        </div>
+        <div class="grid-2" style="margin-top:12px">
+          <div class="card"><h4 style="font-size:13px;color:var(--accent-emerald);margin-bottom:6px">? k-Means++</h4><p style="font-size:12px;color:var(--text-secondary)">Probabilistic seeding — farther points more likely chosen. Reduces bad initializations by ~10×.</p></div>
+          <div class="card"><h4 style="font-size:13px;color:var(--accent-rose);margin-bottom:6px">?? Limitations</h4><p style="font-size:12px;color:var(--text-secondary)">Assumes spherical clusters, sensitive to outliers, requires k upfront, local minima risk.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <!-- Elbow Method -->
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">??</div><div><h3>Elbow Method</h3><p>Choosing optimal k</p></div></div>
+      <div class="canvas-container"><canvas id="elbow-canvas" width="380" height="220"></canvas></div>
+      <div class="warn-alert" style="margin-top:12px"><div>?? <strong>Pitfall:</strong> The "elbow" is often ambiguous. Use Silhouette Score or Gap Statistic alongside WCSS for a stronger decision.</div></div>
+    </div>
+    <!-- k-Means vs k-Medoids -->
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>k-Means vs k-Medoids (PAM)</h3></div></div>
+      <table class="compare-table">
+        <tr><th>Property</th><th>k-Means</th><th>k-Medoids</th></tr>
+        <tr><td>Centroid</td><td>Mean of cluster</td><td>Actual data point</td></tr>
+        <tr><td>Outlier sensitivity</td><td>High</td><td>Low ?</td></tr>
+        <tr><td>Distance metric</td><td>Euclidean only</td><td>Any metric</td></tr>
+        <tr><td>Complexity</td><td>O(nkd·iter)</td><td>O(n²k·iter)</td></tr>
+        <tr><td>Best for</td><td>Large, clean data</td><td>Noisy / mixed data</td></tr>
+      </table>
+      <div class="info-alert" style="margin-top:12px"><div class="info-icon">??</div><div><strong>MiniBatch k-Means:</strong> Uses random subsets each iteration — achieves near-identical quality at a fraction of the cost for large-scale datasets (100k+ points).</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-icon" style="background:rgba(16,185,129,0.15)">??</div><div><h3>Cluster Validation Metrics</h3></div></div>
+    <div class="grid-3">
+      <div class="metric-card">
+        <div class="metric-value" style="font-size:20px">WCSS</div>
+        <div class="metric-label">Inertia</div>
+        <div class="formula-box" style="font-size:11px;margin:8px 0">S?x? - µc?²</div>
+        <div class="metric-desc">Sum of squared distances to centroids. Lower = more compact. Use with Elbow method. Scale-dependent.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" style="font-size:20px">SC</div>
+        <div class="metric-label">Silhouette Coefficient</div>
+        <div class="formula-box" style="font-size:11px;margin:8px 0">s = (b-a) / max(a,b)</div>
+        <div class="metric-desc">a = intra-cluster dist, b = nearest-cluster dist. Range [-1,1]. Higher is better. Works without ground truth.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" style="font-size:20px">DBI</div>
+        <div class="metric-label">Davies–Bouldin Index</div>
+        <div class="formula-box" style="font-size:11px;margin:8px 0">DB = (1/k)S max??? R??</div>
+        <div class="metric-desc">Ratio of within-cluster scatter to between-cluster separation. Lower is better. Penalizes overlapping clusters.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT 3: HIERARCHICAL & DBSCAN -->
+<section id="unit3" class="page unit-3">
+  <div class="hero">
+    <div class="hero-tag">Unit III · Hierarchical &amp; Density-Based Clustering</div>
+    <h1>Hierarchical Clustering &amp; DBSCAN</h1>
+    <p>Agglomerative and divisive approaches, linkage strategies, dendrogram reading, and density-based clustering for arbitrary-shaped clusters.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>Hierarchical Clustering</h3></div></div>
+      <div class="tabs">
+        <button class="tab-btn active" data-group="hclust" data-tab="hc-agg">Agglomerative</button>
+        <button class="tab-btn" data-group="hclust" data-tab="hc-div">Divisive</button>
+        <button class="tab-btn" data-group="hclust" data-tab="hc-link">Linkage Methods</button>
+      </div>
+      <div id="hc-agg" class="tab-panel active" data-group="hclust">
+        <div class="concept-box"><h4>Bottom-Up Approach</h4><p>Start with each point as its own cluster. Iteratively merge the two closest clusters until one remains. Build dendrogram from leaves to root.</p></div>
+        <ul class="step-list">
+          <li><span class="step-num">1</span>Each point = one cluster (n clusters)</li>
+          <li><span class="step-num">2</span>Compute pairwise distance matrix</li>
+          <li><span class="step-num">3</span>Merge two closest clusters</li>
+          <li><span class="step-num">4</span>Update distance matrix</li>
+          <li><span class="step-num">5</span>Repeat until 1 cluster remains</li>
+        </ul>
+      </div>
+      <div id="hc-div" class="tab-panel" data-group="hclust">
+        <div class="concept-box"><h4>Top-Down Approach (DIANA)</h4><p>Start with all points in one cluster. Recursively split into two sub-clusters using a splinter group until each point is alone. More computationally expensive.</p></div>
+        <div class="info-alert"><div class="info-icon">??</div><div>Agglomerative is far more common in practice due to lower complexity O(n² log n) vs divisive O(2n).</div></div>
+      </div>
+      <div id="hc-link" class="tab-panel" data-group="hclust">
+        <table class="compare-table">
+          <tr><th>Linkage</th><th>Merges by</th><th>Cluster shape</th></tr>
+          <tr><td>Single</td><td>Min dist between clusters</td><td>Chains / elongated</td></tr>
+          <tr><td>Complete</td><td>Max dist between clusters</td><td>Compact, spherical</td></tr>
+          <tr><td>Average</td><td>Mean of all pairs</td><td>Balanced</td></tr>
+          <tr><td>Ward</td><td>Min variance increase</td><td>Equal-size, compact ?</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Dendrogram SVG -->
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(16,185,129,0.15)">??</div><div><h3>Dendrogram</h3><p>Cut at different heights to get different k</p></div></div>
+      <svg viewBox="0 0 380 260" style="width:100%;background:var(--bg-secondary);border-radius:8px">
+        <!-- Leaves -->
+        <text x="30" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">A</text>
+        <text x="70" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">B</text>
+        <text x="130" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">C</text>
+        <text x="170" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">D</text>
+        <text x="240" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">E</text>
+        <text x="280" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">F</text>
+        <text x="340" y="245" font-size="11" fill="#94a3b8" text-anchor="middle">G</text>
+        <!-- Merge A+B at height 40 -->
+        <line x1="30" y1="230" x2="30" y2="195" stroke="#6366f1" stroke-width="2"/>
+        <line x1="70" y1="230" x2="70" y2="195" stroke="#6366f1" stroke-width="2"/>
+        <line x1="30" y1="195" x2="70" y2="195" stroke="#6366f1" stroke-width="2"/>
+        <!-- Merge C+D at height 45 -->
+        <line x1="130" y1="230" x2="130" y2="188" stroke="#10b981" stroke-width="2"/>
+        <line x1="170" y1="230" x2="170" y2="188" stroke="#10b981" stroke-width="2"/>
+        <line x1="130" y1="188" x2="170" y2="188" stroke="#10b981" stroke-width="2"/>
+        <!-- Merge E+F at height 35 -->
+        <line x1="240" y1="230" x2="240" y2="200" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="280" y1="230" x2="280" y2="200" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="240" y1="200" x2="280" y2="200" stroke="#f59e0b" stroke-width="2"/>
+        <!-- Merge AB+CD at height 100 -->
+        <line x1="50" y1="195" x2="50" y2="140" stroke="#6366f1" stroke-width="2"/>
+        <line x1="150" y1="188" x2="150" y2="140" stroke="#6366f1" stroke-width="2"/>
+        <line x1="50" y1="140" x2="150" y2="140" stroke="#6366f1" stroke-width="2"/>
+        <!-- Merge EF+G at height 90 -->
+        <line x1="260" y1="200" x2="260" y2="148" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="340" y1="230" x2="340" y2="148" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="260" y1="148" x2="340" y2="148" stroke="#f59e0b" stroke-width="2"/>
+        <!-- Final merge at height 160 -->
+        <line x1="100" y1="140" x2="100" y2="80" stroke="#a78bfa" stroke-width="2"/>
+        <line x1="300" y1="148" x2="300" y2="80" stroke="#a78bfa" stroke-width="2"/>
+        <line x1="100" y1="80" x2="300" y2="80" stroke="#a78bfa" stroke-width="2"/>
+        <!-- Cut lines -->
+        <line x1="10" y1="115" x2="370" y2="115" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="372" y="119" font-size="9" fill="#f43f5e">k=3</text>
+        <line x1="10" y1="160" x2="370" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="372" y="164" font-size="9" fill="#f59e0b">k=2</text>
+        <!-- Y axis -->
+        <line x1="8" y1="70" x2="8" y2="235" stroke="#475569" stroke-width="1"/>
+        <text x="6" y="80" font-size="9" fill="#6b7280" text-anchor="middle">H</text>
+        <text x="6" y="130" font-size="9" fill="#6b7280" text-anchor="middle">?</text>
+        <text x="6" y="240" font-size="9" fill="#6b7280" text-anchor="middle">0</text>
+      </svg>
+      <div class="info-alert" style="margin-top:10px"><div class="info-icon">??</div><div>Cut the dendrogram horizontally at a height to obtain k clusters. The longer the vertical lines, the more distinct the merge.</div></div>
+    </div>
+  </div>
+
+  <!-- DBSCAN Demo -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon" style="background:rgba(244,63,94,0.15)">??</div><div><h3>DBSCAN — Live Interactive Demo</h3><p>Density-Based Spatial Clustering of Applications with Noise</p></div></div>
+    <div class="grid-2">
+      <div>
+        <div class="canvas-container"><canvas id="dbscan-canvas" width="400" height="300"></canvas></div>
+        <div class="controls">
+          <div class="slider-group"><label>e (eps):</label><input type="range" id="db-eps" min="15" max="60" value="35" oninput="document.getElementById('db-eps-val').textContent=this.value"><span id="db-eps-val">35</span></div>
+          <div class="slider-group"><label>minPts:</label><input type="range" id="db-minpts" min="2" max="12" value="5" oninput="document.getElementById('db-mp-val').textContent=this.value"><span id="db-mp-val">5</span></div>
+          <button class="btn btn-primary" onclick="runDBSCAN()">? Run DBSCAN</button>
+          <button class="btn btn-secondary" onclick="resetDBSCAN()">?? New Data</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px">
+          <div class="metric-card"><div class="metric-value" id="dbscan-clusters">—</div><div class="metric-label">Clusters Found</div></div>
+          <div class="metric-card"><div class="metric-value" id="dbscan-noise">—</div><div class="metric-label">Noise Points</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="concept-box"><h4>Core Concepts</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px"><strong style="color:var(--accent-primary)">e (epsilon)</strong>: Radius of neighborhood around each point.</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px"><strong style="color:var(--accent-emerald)">MinPts</strong>: Minimum points within e to be a core point.</p>
+          <p style="font-size:13px;color:var(--text-secondary)"><strong style="color:var(--accent-amber)">Border point</strong>: Within e of a core point but fewer than MinPts neighbors. <strong style="color:var(--accent-rose)">Noise</strong>: Neither core nor border.</p>
+        </div>
+        <div style="margin-top:12px">
+          <table class="compare-table">
+            <tr><th>Method</th><th>Arbitrary Shape</th><th>Needs k</th><th>Noise</th></tr>
+            <tr><td>k-Means</td><td>?</td><td>? Yes</td><td>?</td></tr>
+            <tr><td>Hierarchical</td><td>Partial</td><td>Post-hoc</td><td>?</td></tr>
+            <tr><td>DBSCAN</td><td>? Yes</td><td>? No</td><td>? Yes</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT 4: DIMENSIONALITY REDUCTION -->
+<section id="unit4" class="page unit-4">
+  <div class="hero">
+    <div class="hero-tag">Unit IV · Dimensionality Reduction</div>
+    <h1>PCA, t-SNE, UMAP &amp; Autoencoders</h1>
+    <p>Linear and non-linear techniques for reducing high-dimensional data while preserving structure and variance.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(16,185,129,0.15)">??</div><div><h3>Why Dimensionality Reduction?</h3></div></div>
+      <div class="concept-box"><h4>The Curse of Dimensionality</h4><p>As dimensions grow, data becomes increasingly sparse. Distance metrics lose meaning, models overfit, and computational cost explodes.</p></div>
+      <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:12px">
+          <div style="font-size:11px;font-weight:700;color:var(--accent-emerald);margin-bottom:6px">BENEFITS</div>
+          <ul style="font-size:12px;color:var(--text-secondary);line-height:1.8;padding-left:14px">
+            <li>Remove noise &amp; redundancy</li><li>Faster training</li><li>Enable 2D/3D visualization</li><li>Prevent overfitting</li>
+          </ul>
+        </div>
+        <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.2);border-radius:8px;padding:12px">
+          <div style="font-size:11px;font-weight:700;color:var(--accent-rose);margin-bottom:6px">TRADEOFFS</div>
+          <ul style="font-size:12px;color:var(--text-secondary);line-height:1.8;padding-left:14px">
+            <li>Information loss</li><li>Interpretability cost</li><li>Non-linear harder to explain</li><li>Hyperparameter sensitivity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>PCA — Principal Component Analysis</h3></div></div>
+      <div class="formula-box">C = (1/n)X?X ? eigenvectors = principal components</div>
+      <ul class="step-list">
+        <li><span class="step-num">1</span>Standardize data (zero mean, unit variance)</li>
+        <li><span class="step-num">2</span>Compute covariance matrix</li>
+        <li><span class="step-num">3</span>Eigendecomposition ? principal components</li>
+        <li><span class="step-num">4</span>Project data onto top k eigenvectors</li>
+      </ul>
+      <div class="info-alert" style="margin-top:10px"><div class="info-icon">??</div><div><strong>Explained Variance Ratio:</strong> Pick k such that cumulative explained variance = 95%. PC1 captures most variance, each subsequent PC captures less.</div></div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>PCA</h3><p>Linear</p></div></div>
+      <div style="font-size:12px;color:var(--text-secondary);line-height:1.7">
+        <p>Finds orthogonal axes of maximum variance. Global structure preserved. Fast and interpretable.</p>
+        <div style="margin-top:10px"><span class="badge badge-emerald">Fast: O(d²n)</span><br><span class="badge badge-cyan" style="margin-top:6px;display:inline-block">Interpretable</span><br><span class="badge badge-rose" style="margin-top:6px;display:inline-block">Linear only</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>t-SNE</h3><p>Non-Linear</p></div></div>
+      <div style="font-size:12px;color:var(--text-secondary);line-height:1.7">
+        <p>Uses Student t-distribution to preserve local structure. Great for cluster visualization. Non-deterministic.</p>
+        <div style="margin-top:10px"><span class="badge badge-purple">Local structure</span><br><span class="badge badge-amber" style="margin-top:6px;display:inline-block">Perplexity tuning</span><br><span class="badge badge-rose" style="margin-top:6px;display:inline-block">Slow: O(n²)</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">?</div><div><h3>UMAP</h3><p>Non-Linear</p></div></div>
+      <div style="font-size:12px;color:var(--text-secondary);line-height:1.7">
+        <p>Preserves both local AND global structure. Much faster than t-SNE. Based on Riemannian geometry &amp; fuzzy topology.</p>
+        <div style="margin-top:10px"><span class="badge badge-emerald">Faster than t-SNE</span><br><span class="badge badge-purple" style="margin-top:6px;display:inline-block">Global structure</span><br><span class="badge badge-cyan" style="margin-top:6px;display:inline-block">Scalable</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-icon" style="background:rgba(139,92,246,0.15)">??</div><div><h3>Autoencoder Intuition</h3></div></div>
+    <div class="grid-2">
+      <div>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px">An autoencoder learns to compress data into a low-dimensional <strong style="color:var(--accent-primary)">latent space</strong> (encoder) and reconstruct it (decoder). The bottleneck forces meaningful representation learning.</p>
+        <div class="formula-box">Input ? Encoder ? z (latent) ? Decoder ? Reconstruction</div>
+        <div class="concept-box" style="margin-top:12px"><h4>Reconstruction Loss</h4><p>L = ?x - x^?² — minimized during training. The latent z is the compressed representation, analogous to PCA components but non-linear.</p></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 320 160" style="width:100%;max-width:320px">
+          <!-- Input -->
+          <rect x="10" y="40" width="50" height="80" rx="6" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="35" y="75" font-size="10" fill="#a5b4fc" text-anchor="middle">Input</text>
+          <text x="35" y="90" font-size="10" fill="#a5b4fc" text-anchor="middle">d dims</text>
+          <!-- Encoder -->
+          <polygon points="70,40 110,60 110,100 70,120" fill="rgba(6,182,212,0.1)" stroke="#06b6d4" stroke-width="1.5"/>
+          <text x="90" y="84" font-size="9" fill="#67e8f9" text-anchor="middle">Encoder</text>
+          <!-- Latent -->
+          <rect x="118" y="65" width="30" height="30" rx="4" fill="rgba(139,92,246,0.25)" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="133" y="83" font-size="9" fill="#c4b5fd" text-anchor="middle">z</text>
+          <!-- Decoder -->
+          <polygon points="156,60 196,40 196,120 156,100" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5"/>
+          <text x="176" y="84" font-size="9" fill="#6ee7b7" text-anchor="middle">Decoder</text>
+          <!-- Output -->
+          <rect x="204" y="40" width="50" height="80" rx="6" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="229" y="75" font-size="10" fill="#a5b4fc" text-anchor="middle">Output</text>
+          <text x="229" y="90" font-size="10" fill="#a5b4fc" text-anchor="middle">x^ ˜ x</text>
+          <!-- Loss arrow -->
+          <path d="M 60,130 Q 160,155 260,130" stroke="#f43f5e" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+          <text x="160" y="155" font-size="9" fill="#f43f5e" text-anchor="middle">Reconstruction Loss ?x-x^?²</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT 5: ASSOCIATION RULES & ANOMALY DETECTION -->
+<section id="unit5" class="page unit-5">
+  <div class="hero">
+    <div class="hero-tag">Unit V · Association Rules &amp; Anomaly Detection</div>
+    <h1>Market Basket Analysis &amp; Anomaly Detection</h1>
+    <p>Support, Confidence, Lift — Apriori, FP-Growth algorithms — Isolation Forest and Local Outlier Factor.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <!-- Rule Calculator -->
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">??</div><div><h3>Association Rule Calculator</h3></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+        <div><label style="font-size:12px;color:var(--text-muted)">Total Transactions</label><input id="r-total" type="number" value="1000" style="width:100%;padding:7px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px;font-family:Inter,sans-serif"></div>
+        <div><label style="font-size:12px;color:var(--text-muted)">Count(A n B)</label><input id="r-AB" type="number" value="200" style="width:100%;padding:7px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px;font-family:Inter,sans-serif"></div>
+        <div><label style="font-size:12px;color:var(--text-muted)">Count(A)</label><input id="r-A" type="number" value="300" style="width:100%;padding:7px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px;font-family:Inter,sans-serif"></div>
+        <div><label style="font-size:12px;color:var(--text-muted)">Count(B)</label><input id="r-B" type="number" value="400" style="width:100%;padding:7px;border-radius:6px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-primary);margin-top:4px;font-family:Inter,sans-serif"></div>
+      </div>
+      <button id="btn-calc-rule" class="btn btn-primary" style="width:100%">Calculate Metrics</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+        <div class="metric-card"><div class="metric-value" id="r-support">0.200</div><div class="metric-label">Support</div><div class="metric-desc">P(AnB) — Frequency of rule</div></div>
+        <div class="metric-card"><div class="metric-value" id="r-confidence">0.667</div><div class="metric-label">Confidence</div><div class="metric-desc">P(B|A) — Rule reliability</div></div>
+        <div class="metric-card"><div class="metric-value" id="r-lift">1.67</div><div class="metric-label">Lift</div><div class="metric-desc">&gt;1: positive, =1: independent</div></div>
+        <div class="metric-card"><div class="metric-value" id="r-conviction">1.99</div><div class="metric-label">Conviction</div><div class="metric-desc">Directional implication strength</div></div>
+      </div>
+      <div style="margin-top:12px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid var(--border);font-size:13px;font-weight:600" id="lift-quality">?? Strong positive association</div>
+    </div>
+
+    <!-- Algorithms -->
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>Apriori vs FP-Growth</h3></div></div>
+      <div class="tabs">
+        <button class="tab-btn active" data-group="arule" data-tab="ar-apriori">Apriori</button>
+        <button class="tab-btn" data-group="arule" data-tab="ar-fp">FP-Growth</button>
+        <button class="tab-btn" data-group="arule" data-tab="ar-mba">Market Basket</button>
+      </div>
+      <div id="ar-apriori" class="tab-panel active" data-group="arule">
+        <div class="concept-box"><h4>Apriori Algorithm</h4><p>Uses the anti-monotone property: all subsets of a frequent itemset must also be frequent. Generates candidates level-by-level (BFS).</p></div>
+        <ul class="step-list">
+          <li><span class="step-num">1</span>Find all frequent 1-itemsets (support = minSup)</li>
+          <li><span class="step-num">2</span>Generate candidate 2-itemsets from frequent 1-itemsets</li>
+          <li><span class="step-num">3</span>Prune infrequent candidates</li>
+          <li><span class="step-num">4</span>Repeat until no new frequent itemsets</li>
+        </ul>
+        <div class="warn-alert" style="margin-top:10px"><div>?? Multiple database scans required. Slow for large datasets with low support thresholds.</div></div>
+      </div>
+      <div id="ar-fp" class="tab-panel" data-group="arule">
+        <div class="concept-box"><h4>FP-Growth Algorithm</h4><p>Builds a compact FP-Tree from the database (only 2 scans). Mines frequent patterns directly from the tree without candidate generation.</p></div>
+        <div class="info-alert"><div class="info-icon">?</div><div>FP-Growth is typically 10–100× faster than Apriori. No candidate generation step. Memory-efficient with FP-Tree compression.</div></div>
+      </div>
+      <div id="ar-mba" class="tab-panel" data-group="arule">
+        <div class="rule-card">
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px">
+            <div class="rule-item">?? Beer</div><div class="rule-arrow">?</div><div class="rule-item">?? Chips</div>
+          </div>
+          <div class="rule-metrics">
+            <div class="rule-metric">Support: <span>0.18</span></div>
+            <div class="rule-metric">Confidence: <span>0.72</span></div>
+            <div class="rule-metric">Lift: <span>2.3</span></div>
+          </div>
+        </div>
+        <div class="rule-card" style="margin-top:10px">
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px">
+            <div class="rule-item">?? Milk</div><div class="rule-item">?? Bread</div><div class="rule-arrow">?</div><div class="rule-item">?? Butter</div>
+          </div>
+          <div class="rule-metrics">
+            <div class="rule-metric">Support: <span>0.25</span></div>
+            <div class="rule-metric">Confidence: <span>0.68</span></div>
+            <div class="rule-metric">Lift: <span>1.9</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anomaly Detection -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon" style="background:rgba(244,63,94,0.15)">??</div><div><h3>Anomaly Detection — Isolation Forest &amp; LOF</h3></div></div>
+    <div class="grid-2">
+      <div>
+        <div class="canvas-container"><canvas id="iforest-canvas" width="380" height="260"></canvas></div>
+      </div>
+      <div>
+        <div class="concept-box"><h4>Isolation Forest</h4><p>Anomalies are easier to isolate — they need fewer random splits. Builds random trees; anomaly score = average path length (shorter = more anomalous). O(n log n), highly scalable.</p></div>
+        <div class="concept-box"><h4>Local Outlier Factor (LOF)</h4>
+          <div class="formula-box" style="font-size:11px">LOF(p) = avg(lrd(o)) / lrd(p)</div>
+          <p style="font-size:13px;color:var(--text-secondary)">Compares local density of a point to its neighbors. LOF &gt;&gt; 1 = anomaly. Context-aware — captures local density variations.</p>
+        </div>
+        <div class="grid-2" style="margin-top:12px">
+          <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.2);border-radius:8px;padding:12px">
+            <div style="font-size:11px;font-weight:700;color:var(--accent-rose);margin-bottom:6px">Applications</div>
+            <ul style="font-size:12px;color:var(--text-secondary);line-height:1.8;padding-left:14px">
+              <li>Credit card fraud</li><li>Network intrusion</li><li>Medical diagnosis</li><li>Industrial QA</li>
+            </ul>
+          </div>
+          <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;padding:12px">
+            <div style="font-size:11px;font-weight:700;color:var(--accent-primary);margin-bottom:6px">Novelty vs Anomaly</div>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.6"><strong>Anomaly</strong>: outlier in training data. <strong>Novelty</strong>: new pattern not seen during training.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT 6: EVALUATION -->
+<section id="unit6" class="page unit-6">
+  <div class="hero">
+    <div class="hero-tag">Unit VI · Evaluation &amp; Applications</div>
+    <h1>Evaluating Unsupervised Learning</h1>
+    <p>Internal and external metrics, stability-based evaluation, interpretability challenges, ethics, and real-world case studies.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(244,63,94,0.15)">??</div><div><h3>Silhouette Analysis</h3></div></div>
+      <div class="canvas-container"><canvas id="silhouette-canvas" width="380" height="220"></canvas></div>
+      <div class="formula-box" style="margin-top:12px">s(i) = [b(i) - a(i)] / max{a(i), b(i)}</div>
+      <div class="info-alert" style="margin-top:10px"><div class="info-icon">??</div><div>s ? 1: well-clustered. s ? 0: on boundary. s ? -1: misclassified. Ideal: all bars long and positive.</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>Internal vs External Metrics</h3></div></div>
+      <div style="margin-bottom:12px"><span class="badge badge-purple">Internal</span> — No ground truth labels required</div>
+      <table class="compare-table">
+        <tr><th>Metric</th><th>Type</th><th>Range</th><th>Goal</th></tr>
+        <tr><td>Silhouette</td><td>Internal</td><td>[-1, 1]</td><td>Maximize</td></tr>
+        <tr><td>Davies-Bouldin</td><td>Internal</td><td>[0, 8)</td><td>Minimize</td></tr>
+        <tr><td>WCSS/Inertia</td><td>Internal</td><td>[0, 8)</td><td>Minimize</td></tr>
+        <tr><td>Calinski-Harabász</td><td>Internal</td><td>[0, 8)</td><td>Maximize</td></tr>
+        <tr><td>Rand Index</td><td>External ?</td><td>[0, 1]</td><td>Maximize</td></tr>
+        <tr><td>NMI</td><td>External ?</td><td>[0, 1]</td><td>Maximize</td></tr>
+      </table>
+      <div class="concept-box" style="margin-top:12px"><h4>Stability-Based Evaluation</h4><p>Run clustering on bootstrapped subsamples. High stability = clusters are real. Low stability = clusters may be artifacts of noise.</p></div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(245,158,11,0.15)">??</div><div><h3>Real-World Case Studies</h3></div></div>
+      <div class="concept-box"><h4>?? Customer Segmentation</h4><p>Telecom company clusters 500K users by usage patterns ? 5 segments: heavy streamers, casual callers, data-heavy teens, senior low-usage, business power users. Targeted plans increase ARPU by 23%.</p></div>
+      <div class="concept-box"><h4>?? Gene Expression</h4><p>Hierarchical clustering of 20,000 genes from cancer biopsies reveals 4 subtypes. Each subtype responds differently to chemotherapy — enables precision medicine.</p></div>
+      <div class="concept-box"><h4>?? Fraud Detection</h4><p>Isolation Forest on credit card transactions flags 0.1% of transactions as anomalous. Combined with LOF reduces false positive rate by 40% vs rule-based systems.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(244,63,94,0.15)">??</div><div><h3>Ethical Considerations</h3></div></div>
+      <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.2);border-radius:10px;padding:16px;margin-bottom:12px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent-rose);margin-bottom:10px">?? Algorithmic Bias in Clustering</div>
+        <ul style="font-size:13px;color:var(--text-secondary);line-height:1.8;padding-left:16px">
+          <li>Clusters can encode historical discrimination</li>
+          <li>Distance metrics reflect feature choices (biased data ? biased clusters)</li>
+          <li>Anomaly detection may flag minorities as "outliers"</li>
+          <li>Market segmentation can reinforce pricing inequality</li>
+        </ul>
+      </div>
+      <div class="concept-box"><h4>Interpretability Challenges</h4><p>Unlike supervised models, unsupervised results lack ground truth. Cluster labels are arbitrary — "Cluster 2" means nothing without domain interpretation. Requires domain expert validation.</p></div>
+      <div class="info-alert"><div class="info-icon">?</div><div><strong>Best Practice:</strong> Always validate clusters against domain knowledge. Visualize, interpret, and challenge cluster assignments before acting on them.</div></div>
+    </div>
+  </div>
+
+  <!-- Metric Selector -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>Metric Deep Dive</h3></div></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+      <label style="font-size:13px;color:var(--text-secondary)">Select metric:</label>
+      <select id="metric-select" onchange="updateMetricExplain()">
+        <option value="silhouette">Silhouette Score</option>
+        <option value="davies">Davies-Bouldin Index</option>
+        <option value="inertia">Inertia (WCSS)</option>
+        <option value="calinski">Calinski-Harabász</option>
+      </select>
+    </div>
+    <div id="metric-explain" class="concept-box" style="font-size:14px;color:var(--text-secondary)"><strong>Silhouette Score</strong>: Measures how similar a point is to its own cluster vs other clusters. Range [-1,1]. Higher is better.</div>
+  </div>
+</section>
+
+<!-- PROJECT: PCA vs t-SNE DASHBOARD -->
+<section id="project" class="page unit-p">
+  <div class="hero" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(6,182,212,0.12),rgba(139,92,246,0.15))">
+    <div class="hero-tag">?? Project Component · Live Dashboard</div>
+    <h1>PCA vs t-SNE Visualization Dashboard</h1>
+    <p>Compare linear (PCA) and non-linear (t-SNE) dimensionality reduction side-by-side on MNIST digit clusters and customer segmentation data. Observe how cluster separation changes with each method.</p>
+  </div>
+
+  <!-- Dataset selector -->
+  <div class="card" style="margin-bottom:20px">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span style="font-size:14px;font-weight:600;color:var(--text-secondary)">Dataset:</span>
+      <button class="btn btn-primary" onclick="setDataset('digits')">?? MNIST Digits (10 classes)</button>
+      <button class="btn btn-secondary" onclick="setDataset('customers')">?? Customer Segments (5 groups)</button>
+      <button class="btn btn-emerald" onclick="drawProjections()">?? Regenerate Projections</button>
+    </div>
+  </div>
+
+  <!-- Side-by-side canvases -->
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card" style="padding:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div><h3 style="font-size:16px;font-weight:700">PCA Projection</h3><p style="font-size:12px;color:var(--text-muted)">Linear · Maximizes variance</p></div>
+        <span class="badge badge-cyan">Linear</span>
+      </div>
+      <div class="canvas-container glow-cyan"><canvas id="pca-canvas" width="400" height="320"></canvas></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+        <div class="metric-card"><div class="metric-value" id="pca-sil">0.42</div><div class="metric-label">Silhouette Score</div></div>
+        <div class="metric-card"><div class="metric-value" style="font-size:18px">Linear</div><div class="metric-label">Method Type</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div><h3 style="font-size:16px;font-weight:700">t-SNE Projection</h3><p style="font-size:12px;color:var(--text-muted)">Non-linear · Preserves local structure</p></div>
+        <span class="badge badge-purple">Non-Linear</span>
+      </div>
+      <div class="canvas-container glow-purple"><canvas id="tsne-canvas" width="400" height="320"></canvas></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+        <div class="metric-card"><div class="metric-value" id="tsne-sil">0.86</div><div class="metric-label">Silhouette Score</div></div>
+        <div class="metric-card"><div class="metric-value" style="font-size:18px">Non-Linear</div><div class="metric-label">Method Type</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cluster legend -->
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-header"><div class="card-icon" style="background:rgba(99,102,241,0.15)">??</div><div><h3>Cluster Legend</h3></div></div>
+    <div class="legend" id="proj-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#6366f1"></div>Class 0</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div>Class 1</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Class 2</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f43f5e"></div>Class 3</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div>Class 4</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div>Class 5</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div>Class 6</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#84cc16"></div>Class 7</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div>Class 8</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#14b8a6"></div>Class 9</div>
+    </div>
+  </div>
+
+  <!-- Analysis -->
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(6,182,212,0.15)">??</div><div><h3>PCA Analysis</h3></div></div>
+      <div class="concept-box"><h4>What you observe</h4><p>PCA clusters tend to overlap, especially for visually similar digits (3 vs 8, 4 vs 9). The projection preserves global variance but loses local cluster boundaries.</p></div>
+      <table class="compare-table">
+        <tr><th>Property</th><th>Value</th></tr>
+        <tr><td>Components</td><td>2 (PC1, PC2)</td></tr>
+        <tr><td>Explained variance</td><td>~30–40% (2D)</td></tr>
+        <tr><td>Computation</td><td>O(d²n) — fast</td></tr>
+        <tr><td>Deterministic</td><td>? Yes</td></tr>
+        <tr><td>Global structure</td><td>? Preserved</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon" style="background:rgba(139,92,246,0.15)">??</div><div><h3>t-SNE Analysis</h3></div></div>
+      <div class="concept-box"><h4>What you observe</h4><p>t-SNE creates well-separated, tight clusters for each digit class. Local neighborhood structure is preserved — similar digits cluster tightly together with clear boundaries.</p></div>
+      <table class="compare-table">
+        <tr><th>Property</th><th>Value</th></tr>
+        <tr><td>Perplexity</td><td>30 (typical)</td></tr>
+        <tr><td>Information preserved</td><td>Local structure</td></tr>
+        <tr><td>Computation</td><td>O(n²) — slower</td></tr>
+        <tr><td>Deterministic</td><td>? Random init</td></tr>
+        <tr><td>Distances meaningful</td><td>?? Only local</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-icon" style="background:rgba(16,185,129,0.15)">??</div><div><h3>Project Conclusions</h3></div></div>
+    <div class="grid-3">
+      <div class="concept-box"><h4>? Use PCA when…</h4><p>You need fast preprocessing, interpretable components, or dimensionality reduction before training another model. Also ideal for explained variance analysis.</p></div>
+      <div class="concept-box"><h4>? Use t-SNE when…</h4><p>You need to <strong>visualize</strong> high-dimensional data and understand cluster structure. Not suitable for downstream ML tasks as distances are not meaningful globally.</p></div>
+      <div class="concept-box"><h4>? Use UMAP when…</h4><p>You need t-SNE quality but faster execution, or when global structure preservation matters alongside local. Increasingly preferred for production pipelines.</p></div>
+    </div>
+    <div class="info-alert" style="margin-top:16px"><div class="info-icon">??</div><div><strong>Key Takeaway:</strong> For MNIST, t-SNE achieves Silhouette ~0.85 vs PCA ~0.42 in 2D. But PCA is 10–50× faster and scales to millions of samples. Choose based on your goal: interpretability/speed (PCA) vs visual cluster quality (t-SNE/UMAP).</div></div>
+  </div>
+</section>
+
+</main><!-- end main-content -->
+
+<script src="viz.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
